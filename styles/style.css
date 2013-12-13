@@ -1,0 +1,2723 @@
+/*
+Effects:
+.amp-bounceIn
+.amp-red-color
+.amp-yellow-color
+.amp-bounceIn
+.amp-pulse
+.amp-wobble
+.amp-shake
+
+*/
+/* AMP Player */
+#amp-player {
+	position: fixed;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/player.png') no-repeat;
+	top: 0;
+	left: 5%;
+	height: 80px;
+	width: 316px;
+	z-index: 99999999;
+}
+#amp-play {
+	display: block;
+	position: absolute;
+	top: 14px;
+	left: 12px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/play.png') no-repeat;
+	width:38px;
+	height: 38px;
+}
+#amp-control {
+	display: block;
+	position: absolute;
+	top: 18px;
+	left: 87px;
+	width:40px;
+	height: 38px;
+}
+#amp-control.amp-play {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/play.png') no-repeat;
+}
+#amp-control.amp-pause {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/pause.png') no-repeat;
+}
+#amp-mute {
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 134px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/mute.png') no-repeat;
+	width:39px;
+	height: 38px;
+}
+#amp-button {
+	display: block;
+	position: absolute;
+	top: 33px;
+	left: 183px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/button.png') no-repeat;
+	width:124px;
+	height: 34px;
+}
+
+/* Wrapping paper */
+.amp-wrapping1 {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping1.png') no-repeat;
+	z-index: 100000000;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping2 {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping2.png') no-repeat;
+	z-index: 100000001;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping3 {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping3.png') no-repeat;
+	z-index: 100000002;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping4 {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping4.png') no-repeat;
+	z-index: 100000003;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping_bow {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping_bow.png') no-repeat;
+	z-index: 100000004;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping_full {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrapping_full.png') no-repeat;
+	z-index: 100000005;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping_end {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/wrappingend.png') no-repeat;
+	z-index: 100000006;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+}
+.amp-wrapping_share-bg {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/share-bg.png') no-repeat;
+	z-index: 1000000010;
+	position: fixed;
+	bottom: 3%;
+	right: 0;
+	height: 336px;
+	width: 125px;
+}
+.amp-wrapping_share-fb {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/share-fb.png') no-repeat;
+	z-index: 1000000011;
+	position: absolute;
+	bottom: 180px;
+	right: 29px;
+	height: 65px;
+	width: 64px;
+}
+.amp-wrapping_share-twitter {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/share-twitter.png') no-repeat;
+	z-index: 1000000011;
+	position: absolute;
+	bottom: 100px;
+	right: 29px;
+	height: 65px;
+	width: 64px;
+}
+.amp-wrapping_share-email {
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/share-email.png') no-repeat;
+	z-index: 1000000011;
+	position: absolute;
+	bottom: 20px;
+	right: 29px;
+	height: 65px;
+	width: 64px;
+}
+
+.amp-bell {
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%, rgba(254,252,234,0) 100%) !important;
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(241,218,54,1)), color-stop(100%,rgba(254,252,234,0))) !important;
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -o-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: radial-gradient(ellipse at center,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#00fefcea',GradientType=1 ) !important;
+
+-webkit-animation-name: swing !important;
+	 -moz-animation-name: swing !important;
+		 -o-animation-name: swing !important;
+				animation-name: swing !important;
+-webkit-transform-origin: 50% 0% !important;
+	 -moz-transform-origin: 50% 0% !important;
+		 -o-transform-origin: 50% 0% !important;
+				transform-origin: 50% 0% !important;
+-webkit-animation-fill-mode: forwards !important;
+	 -moz-animation-fill-mode: forwards !important;
+		 -o-animation-fill-mode: forwards !important;
+				animation-fill-mode: forwards !important;
+-webkit-animation: swing linear 1s !important; 
+	 -moz-animation: swing linear 1s !important; 
+		 -o-animation: swing linear 1s !important;
+				animation: swing linear 1s !important;
+-webkit-animation-iteration-count: 1 !important;
+		-moz-animation-iteration-count: 1 !important;
+		-o-animation-iteration-count: 1 !important;
+			 animation-iteration-count: 1 !important;
+}
+
+.amp-snow-body {
+		background: #fff url('http://www.cheerify.it/images/bg_day.png') no-repeat !important;
+		background-size: contain;
+}
+.amp-snow{
+	background-color: transparent;
+    background-image: url('http://www.cheerify.it/images/snowh.png'), url('http://www.cheerify.it/images/snow3q.png'), url('http://www.cheerify.it/images/snow2l.png');
+    -webkit-animation: snow 20s linear infinite;
+    -moz-animation: snow 20s linear infinite;
+    -ms-animation: snow 20s linear infinite;
+    animation: snow 20s linear infinite;
+}
+   
+#amp-canvas-snow {
+	position: fixed;
+	z-index: 99999995;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.amp-evergreen-top {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: transparent url('http://www.cheerify.it/images/evergreen_top.png') repeat-x;
+	background-size: 70%;
+	z-index: 99999995;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.amp-lights-top {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-horiz-off.png') repeat-x;
+	z-index: 99999999;
+	height: 100px;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.amp-lights-bottom {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-horiz-off.png') repeat-x;
+	z-index: 99999999;
+	height: 100px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.amp-lights-left {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-off.png') repeat-y;
+	z-index: 99999999;
+	height: 100%;
+	width: 100px;
+	top: 0;
+	left: 0;
+}
+.amp-lights-right {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-off.png') repeat-y;
+	z-index: 99999999;
+	height: 100%;
+	width: 100px;
+	top: 0;
+	right: 0;
+}
+.amp-lights-right.amp-lights-on,
+.amp-lights-left.amp-lights-on {
+		background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-on.png') repeat-y;
+
+}
+.amp-lights-top.amp-lights-on,
+.amp-lights-bottom.amp-lights-on {
+		background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-horiz-on.png') repeat-x;
+}
+.amp-lights-right.amp-lights-off,
+.amp-lights-left.amp-lights-off {
+		background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-off.png') repeat-y;
+
+}
+.amp-lights-top.amp-lights-off,
+.amp-lights-bottom.amp-lights-off {
+		background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/lights-horiz-on.png') repeat-x;
+}
+
+/* Snow */
+@keyframes snow { 
+		0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+		100% { background-position: 500px 1000px, 400px 400px, 300px 300px }
+}
+
+@-moz-keyframes snow { 
+		0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+		100% { background-position: 500px 1000px, 400px 400px, 300px 300px }
+}
+
+@-webkit-keyframes snow { 
+		0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+		100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+@-ms-keyframes snow { 
+		0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+		100% { background-position: 500px 1000px, 400px 400px, 300px 300px }
+}
+
+.amp-snowman-full {
+        position: fixed;
+        left:100%;
+        bottom:0px;
+        z-index:9999999;
+        height: 543px;
+        width: 384px;
+}
+.snowman-move-in {
+        animation: amp-snowman-full ease 4s;
+		animation-play-state:running;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-fill-mode:forwards;
+        -webkit-animation: amp-snowman-full ease 4s;
+		-webkit-animation-play-state:running;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation: amp-snowman-full ease 4s;
+        -moz-animation-iteration-count: 1;
+		-moz-animation-play-state:running;
+        -moz-animation-fill-mode: both;
+        -moz-animation-fill-mode:forwards;
+        -o-animation: amp-snowman-full ease 4s;
+		-o-animation-play-state:running;
+        -o-animation-iteration-count: 1;
+        -o-animation-fill-mode: both;
+        -o-animation-fill-mode:forwards;
+        -ms-animation: amp-snowman-full ease 4s;
+		-ms-animation-play-state:running;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-fill-mode: both;
+        -ms-animation-fill-mode:forwards;
+}
+@keyframes amp-snowman-full {
+        0% {left:100%;}
+        100% {left:60%;}
+}
+
+@-moz-keyframes amp-snowman-full{
+        0% {left:100%;bottom:0px;}
+        100% {left:60%;}
+}
+
+@-webkit-keyframes amp-snowman-full {
+        0% {left:100%;bottom:0px;}
+        100% {left:60%;}
+}
+
+@-o-keyframes amp-snowman-full {
+        0% {left:100%;}
+        100% {left:60%;}
+}
+
+@-ms-keyframes amp-snowman-full {
+        0% {left:100%;}
+        100% {left:60%;}
+}
+
+.snowman-move-in.snowman2{
+	    animation: amp-snowman-full-two ease 4s;
+		animation-play-state:running;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-fill-mode:forwards;
+        -webkit-animation: amp-snowman-full-two ease 4s;
+		-webkit-animation-play-state:running;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation: amp-snowman-full-two ease 4s;
+        -moz-animation-iteration-count: 1;
+		-moz-animation-play-state:running;
+        -moz-animation-fill-mode: both;
+        -moz-animation-fill-mode:forwards;
+        -o-animation: amp-snowman-full-two ease 4s;
+		-o-animation-play-state:running;
+        -o-animation-iteration-count: 1;
+        -o-animation-fill-mode: both;
+        -o-animation-fill-mode:forwards;
+        -ms-animation: amp-snowman-full-two ease 4s;
+		-ms-animation-play-state:running;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-fill-mode: both;
+        -ms-animation-fill-mode:forwards;
+}
+@keyframes amp-snowman-full-two {
+        0% {left:100%;}
+        100% {left:40%;}
+}
+
+@-moz-keyframes amp-snowman-full-two{
+        0% {left:100%;bottom:0px;}
+        100% {left:40%;}
+}
+
+@-webkit-keyframes amp-snowman-full-two {
+        0% {left:100%;bottom:0px;}
+        100% {left:40%;}
+}
+
+@-o-keyframes amp-snowman-full-two {
+        0% {left:100%;}
+        100% {left:40%;}
+}
+
+@-ms-keyframes amp-snowman-full-two {
+        0% {left:100%;}
+        100% {left:40%;}
+}
+
+.snowman-move-in.snowman3{
+	    animation: amp-snowman-full-three ease 4s;
+		animation-play-state:running;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-fill-mode:forwards;
+        -webkit-animation: amp-snowman-full-three ease 4s;
+		-webkit-animation-play-state:running;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation: amp-snowman-full-three ease 4s;
+        -moz-animation-iteration-count: 1;
+		-moz-animation-play-state:running;
+        -moz-animation-fill-mode: both;
+        -moz-animation-fill-mode:forwards;
+        -o-animation: amp-snowman-full-three ease 4s;
+		-o-animation-play-state:running;
+        -o-animation-iteration-count: 1;
+        -o-animation-fill-mode: both;
+        -o-animation-fill-mode:forwards;
+        -ms-animation: amp-snowman-full-three ease 4s;
+		-ms-animation-play-state:running;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-fill-mode: both;
+        -ms-animation-fill-mode:forwards;
+}
+@keyframes amp-snowman-full-three {
+        0% {left:100%;}
+        100% {left:20%;}
+}
+
+@-moz-keyframes amp-snowman-full-three{
+        0% {left:100%;bottom:0px;}
+        100% {left:20%;}
+}
+
+@-webkit-keyframes amp-snowman-full-three {
+        0% {left:100%;bottom:0px;}
+        100% {left:20%;}
+}
+
+@-o-keyframes amp-snowman-full-three {
+        0% {left:100%;}
+        100% {left:20%;}
+}
+
+@-ms-keyframes amp-snowman-full-three {
+        0% {left:100%;}
+        100% {left:20%;}
+}
+
+.snowman-move-in.snowman4{
+	    animation: amp-snowman-full-four ease 4s;
+		animation-play-state:running;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-fill-mode:forwards;
+        -webkit-animation: amp-snowman-full-four ease 4s;
+		-webkit-animation-play-state:running;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation: amp-snowman-full-four ease 4s;
+        -moz-animation-iteration-count: 1;
+		-moz-animation-play-state:running;
+        -moz-animation-fill-mode: both;
+        -moz-animation-fill-mode:forwards;
+        -o-animation: amp-snowman-full-four ease 4s;
+		-o-animation-play-state:running;
+        -o-animation-iteration-count: 1;
+        -o-animation-fill-mode: both;
+        -o-animation-fill-mode:forwards;
+        -ms-animation: amp-snowman-full-four ease 4s;
+		-ms-animation-play-state:running;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-fill-mode: both;
+        -ms-animation-fill-mode:forwards;
+}
+@keyframes amp-snowman-full-four {
+        0% {left:100%;}
+        100% {left:80%;}
+}
+
+@-moz-keyframes amp-snowman-full-four{
+        0% {left:100%;bottom:0px;}
+        100% {left:80%;}
+}
+
+@-webkit-keyframes amp-snowman-full-four {
+        0% {left:100%;bottom:0px;}
+        100% {left:80%;}
+}
+
+@-o-keyframes amp-snowman-full-four {
+        0% {left:100%;}
+        100% {left:80%;}
+}
+
+@-ms-keyframes amp-snowman-full-four {
+        0% {left:100%;}
+        100% {left:80%;}
+}
+
+.snowman-move-in.snowman5{
+	    animation: amp-snowman-full-five ease 4s;
+		animation-play-state:running;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-fill-mode:forwards;
+        -webkit-animation: amp-snowman-full-five ease 4s;
+		-webkit-animation-play-state:running;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-fill-mode:forwards;
+        -moz-animation: amp-snowman-full-five ease 4s;
+        -moz-animation-iteration-count: 1;
+		-moz-animation-play-state:running;
+        -moz-animation-fill-mode: both;
+        -moz-animation-fill-mode:forwards;
+        -o-animation: amp-snowman-full-five ease 4s;
+		-o-animation-play-state:running;
+        -o-animation-iteration-count: 1;
+        -o-animation-fill-mode: both;
+        -o-animation-fill-mode:forwards;
+        -ms-animation: amp-snowman-full-five ease 4s;
+		-ms-animation-play-state:running;
+        -ms-animation-iteration-count: 1;
+        -ms-animation-fill-mode: both;
+        -ms-animation-fill-mode:forwards;
+}
+@keyframes amp-snowman-full-five {
+        0% {left:100%;}
+        100% {left:0%;}
+}
+
+@-moz-keyframes amp-snowman-full-five{
+        0% {left:100%;bottom:0px;}
+        100% {left:0%;}
+}
+
+@-webkit-keyframes amp-snowman-full-five {
+        0% {left:100%;bottom:0px;}
+        100% {left:0%;}
+}
+
+@-o-keyframes amp-snowman-full-five {
+        0% {left:100%;}
+        100% {left:0%;}
+}
+
+@-ms-keyframes amp-snowman-full-five {
+        0% {left:100%;}
+        100% {left:0%;}
+}
+.amp-snowman-bottom {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snowman_bottom.png') no-repeat;
+    height: 253px;
+    width: 282px;
+}
+
+
+.amp-snowman-middle {
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    z-index: 400;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snowman_middle.png') no-repeat;
+    height: 350px;
+    width: 216px;
+}
+
+.amp-snowman-middle-move {
+	-webkit-animation: smMiddleFrames linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 20;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smMiddleFrames linear .5s;
+	animation-play-state:running;
+	animation-iteration-count: 20;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards;
+
+}
+@-webkit-keyframes smMiddleFrames{
+		0%{bottom:0px;}
+		25%{bottom:-10px}
+		50%{bottom:0px}
+		75%{bottom:10px;}
+		100%{bottom:0px;}
+}
+@keyframes smMiddleFrames{
+		0%{bottom:0px;}
+		25%{bottom:-10px}
+		50%{bottom:0px}
+		75%{bottom:10px;}
+		100%{bottom:0px;}
+}						
+
+.amp-snowman-middle-move2 {
+	-webkit-animation: smMiddleFrames2 linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smMiddleFrames2 linear .5s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes smMiddleFrames2{
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(21deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smMiddleFrames2{
+		0%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ transform:  rotate(21deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-middle-move3 {
+	-webkit-animation: smMiddleFrames3 linear .35s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smMiddleFrames3 linear .35s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards;
+
+}
+@-webkit-keyframes smMiddleFrames3{
+	0%{ -webkit-transform:  rotate(21deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+	100%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smMiddleFrames3{
+	0%{ transform:  rotate(21deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+	100%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+.amp-snowman-head {
+    position: absolute;
+    left: 15px;
+    bottom: 240px;
+    z-index: 900;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snowman_head.png') no-repeat;
+    height: 225px;
+    width: 175px;						
+}
+.amp-snowman-head-move {
+	-webkit-animation: smHeadFrames linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 20;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards; 							
+	
+	animation: smHeadFrames linear .5s;
+	animation-play-state:running;
+	animation-iteration-count: 20;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards; 
+}
+
+@-webkit-keyframes smHeadFrames{
+		0%{left:15px;}
+		25%{left:10px}
+		50%{left:15px}
+		75%{left:20px}
+		100%{left:15px}
+}
+@keyframes smHeadFrames{
+		0%{left:15px;}
+		25%{left:10px}
+		50%{left:15px}
+		75%{left:20px}
+		100%{left:15px}
+}
+
+.amp-snowman-head-move2 {
+	-webkit-animation: smHeadFrames2 linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards; 							
+	
+	-animation: smHeadFrames2 linear .5s;
+	-animation-play-state:running;
+	-animation-iteration-count: 1;
+	-transform-origin: 50% 50%;	
+	-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes smHeadFrames2{
+	0%{left:15px; bottom:240px; -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+	100%{left:25px; bottom:220px; -webkit-transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smHeadFrames2{
+	0%{left:15px; bottom:240px; transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+	100%{left:25px; bottom:220px; transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-head-move3 {
+	-webkit-animation: smHeadFrames3 linear .35s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards; 							
+	
+	animation: smHeadFrames3 linear .35s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes smHeadFrames3{
+		0%{left:25px; bottom:220px; -webkit-transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:15px; bottom:240px; -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}								
+}
+@keyframes smHeadFrames3{
+		0%{left:25px; bottom:220px; transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:15px; bottom:240px; transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}								
+}
+
+.amp-snowman-hat {
+    position: absolute;
+    left: 40px;
+    bottom: 170px;
+    z-index: 900;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snowman_hat.png') no-repeat;
+    height: 105px;
+    width: 139px;
+}
+
+.amp-snowman-hat-move {
+	-webkit-animation: smHatFrames linear 1s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smHatFrames linear 1s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards; 	                            
+}
+
+@-webkit-keyframes smHatFrames{
+		0%{left:40px; bottom:170px; -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:210px; bottom:70px; -webkit-transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smHatFrames{
+		0%{left:40px; bottom:170px; transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:210px; bottom:70px; transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-hat-move2 {
+	-webkit-animation: smHatFrames2 linear 1s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smHatFrames2 linear 1s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards; 	
+}
+
+@-webkit-keyframes smHatFrames2{
+		0%{left:210px; bottom:70px; -webkit-transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{left:10px; bottom:250px; -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:-180px; bottom:-20px; -webkit-transform:  rotate(-60deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smHatFrames2{
+		0%{left:210px; bottom:70px; transform:  rotate(25deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{left:10px; bottom:250px; transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:-180px; bottom:-20px; transform:  rotate(-60deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-hat-move3 {
+	-webkit-animation: smHatFrames3 linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smHatFrames3 linear .5s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes smHatFrames3{
+		0%{left:-180px; bottom:-20px; -webkit-transform:  rotate(-60deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:-180px; bottom:-20px; -webkit-transform:  rotate(330deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smHatFrames3{
+		0%{left:-180px; bottom:-20px; transform:  rotate(-60deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:-180px; bottom:-20px; transform:  rotate(330deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-hat-move4 {
+	-webkit-animation: smHatFrames4 linear .5s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smHatFrames4 linear .5s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;	
+	animation-fill-mode:forwards; 	
+}
+
+@-webkit-keyframes smHatFrames4{
+		0%{left:-180px; bottom:-20px; -webkit-transform:  rotate(330deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{left:-50px; bottom:280px; -webkit-transform:  rotate(165deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:40px; bottom:170px; -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smHatFrames4{
+		0%{left:-180px; bottom:-20px; transform:  rotate(330deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{left:-50px; bottom:280px; transform:  rotate(165deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{left:40px; bottom:170px; transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-leftarm {
+    position: absolute;
+    left: -105px;
+    top: 80px;
+    z-index: 500;
+	background: transparent url('http://www.cheerify.it/images/snowman_leftarm.png') no-repeat;
+    height: 23px;
+    width: 121px;							
+}
+
+.amp-snowman-leftarm-move {
+	-webkit-animation: smLArmFrames linear .75s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 2;
+	-webkit-transform-origin: 100% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smLArmFrames linear .75s;
+	animation-play-state:running;
+	animation-iteration-count: 2;
+	transform-origin: 100% 50%;	
+	animation-fill-mode:forwards; 						
+}
+
+@-webkit-keyframes smLArmFrames {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		25%{ -webkit-transform:  rotate(30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		75%{ -webkit-transform:  rotate(-30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smLArmFrames {
+		0%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		25%{ transform:  rotate(30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		75%{ transform:  rotate(-30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-leftarm-move2 {
+	-webkit-animation: smLArmFrames2 linear .25s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 50%;	
+	-webkit-animation-fill-mode:forwards; 		
+
+	animation: smLArmFrames2 linear .25s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 100% 50%;	
+	animation-fill-mode:forwards; 						
+}
+
+@-webkit-keyframes smLArmFrames2 {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+
+}
+@keyframes smLArmFrames2 {
+		0%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ transform:  rotate(50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+
+}
+
+.amp-snowman-rightarm {
+    position: absolute;
+    left: 200px;
+    top: 80px;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snowman_rightarm.png') no-repeat;
+    height: 23px;
+    width: 121px;							
+}
+
+.amp-snowman-rightarm-move{
+	-webkit-animation: smRArmFrames linear .75s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 2;
+	-webkit-transform-origin: 0% 50%;	
+	-webkit-animation-fill-mode:forwards; 	
+
+	animation: smRArmFrames linear .75s;
+	animation-play-state:running;
+	animation-iteration-count: 2;
+	transform-origin: 0% 50%;	
+	animation-fill-mode:forwards; 						
+}
+
+@-webkit-keyframes smRArmFrames {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		25%{ -webkit-transform:  rotate(-30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		75%{ -webkit-transform:  rotate(30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smRArmFrames {
+		0%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		25%{ transform:  rotate(-30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		75%{ transform:  rotate(30deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-rightarm-move2{
+	-webkit-animation: smRArmFrames2 linear 1s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 0% 50%;	
+	-webkit-animation-fill-mode:forwards;
+
+	animation: smRArmFrames2 linear 1s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 0% 50%;	
+	animation-fill-mode:forwards; 					
+}
+
+@-webkit-keyframes smRArmFrames2 {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ -webkit-transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smRArmFrames2 {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		50%{ -webkit-transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+
+.amp-snowman-rightarm-move3{
+	-webkit-animation: smRArmFrames3 linear .35s;
+	-webkit-animation-play-state:running;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 0% 50%;	
+	-webkit-animation-fill-mode:forwards; 
+
+	-moz-animation: smRArmFrames3 linear .35s;
+	-moz-animation-play-state:running;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 0% 50%;	
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: smRArmFrames3 linear .35s;
+	-o-animation-play-state:running;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 0% 50%;	
+	-o-animation-fill-mode:forwards;
+
+	animation: smRArmFrames3 linear .35s;
+	animation-play-state:running;
+	animation-iteration-count: 1;
+	transform-origin: 0% 50%;	
+	animation-fill-mode:forwards;					
+}
+
+@-webkit-keyframes smRArmFrames3 {
+		0%{ -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -webkit-transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@-moz-keyframes smRArmFrames3 {
+		0%{ -moz-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -moz-transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@-o-keyframes smRArmFrames3 {
+		0%{ -o-transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ -o-transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+@keyframes smRArmFrames3 {
+		0%{ transform:  rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+		100%{ transform:  rotate(-50deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg) ;}
+}
+.amp-snowman-leave {
+	-webkit-animation: snowman-leave ease-out .5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode:forwards;
+
+	-moz-animation: snowman-leave ease-out .5s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: snowman-leave ease-out .5s;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode:forwards;
+
+	animation: snowman-leave ease-out .5s;
+	animation-iteration-count: 1;
+	animation-fill-mode:forwards;
+}
+@-webkit-keyframes snowman-leave{
+  0% {
+    left:60%;
+    -webkit-transform: rotate(0deg) scaleX(1);
+  }
+  100% {
+    top: 120%;
+    -webkit-transform: rotate(94deg) scaleX(1);
+  }
+}
+@-moz-keyframes snowman-leave{
+  0% {
+    left:60%;
+    -moz-transform: rotate(0deg) scaleX(1);
+  }
+  100% {
+    top: 120%;
+    -moz-transform: rotate(94deg) scaleX(1);
+  }
+}
+@-o-keyframes snowman-leave{
+  0% {
+    left:60%;
+    -o-transform: rotate(0deg) scaleX(1);
+  }
+  100% {
+    top: 120%;
+    -o-transform: rotate(94deg) scaleX(1);
+  }
+}
+@keyframes snowman-leave{
+  0% {
+    left:60%;
+    transform: rotate(0deg) scaleX(1);
+  }
+  100% {
+    top: 120%;
+    transform: rotate(94deg) scaleX(1);
+  }
+}
+
+.amp-site-spin {
+	-webkit-animation: site-spin ease-out 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode:forwards;
+}
+@-webkit-keyframes site-spin{
+  0%,100% {
+    -webkit-transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(180deg);
+  }
+}
+.amp-ornament6,
+.amp-ornament7,
+.amp-ornament8,
+.amp-ornament9 {
+	position: fixed;
+	z-index:4000000;
+	left:48%;
+	top:0px;
+	animation: amp-ornament-drop ease-out 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode:forwards;
+	transform-origin: 50% 0%;
+	-webkit-animation: amp-ornament-drop ease-out 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-transform-origin: 50% 0%;
+	-moz-animation: amp-ornament-drop ease-out 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode:forwards;
+	-moz-transform-origin: 50% 0%;
+	-o-animation: amp-ornament-drop ease-out 1s;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode:forwards;
+	-o-transform-origin: 50% 0%;
+	-ms-animation: amp-ornament-drop ease-out 1s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-fill-mode:forwards;
+	-ms-transform-origin: 50% 0%;
+}
+.amp-ornament1, 
+.amp-ornament2,
+.amp-ornament3,
+.amp-ornament4,
+.amp-ornament5 {
+	position: fixed;
+	z-index:4000000;
+	left:48%;
+	top:-50px;
+	animation: amp-ornament-drop-short ease-out 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode:forwards;
+	transform-origin: 50% 0%;
+	-webkit-animation: amp-ornament-drop-short ease-out 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-transform-origin: 50% 0%;
+	-moz-animation: amp-ornament-drop-short ease-out 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode:forwards;
+	-moz-transform-origin: 50% 0%;
+	-o-animation: amp-ornament-drop-short ease-out 1s;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode:forwards;
+	-o-transform-origin: 50% 0%;
+	-ms-animation: amp-ornament-drop-short ease-out 1s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-fill-mode:forwards;
+	-ms-transform-origin: 50% 0%;
+}
+.amp-ornament1 {
+	background: transparent url('http://www.cheerify.it/images/ornament1.png') no-repeat;
+	height: 188px;
+	width: 63px;
+}
+.amp-ornament2 {
+	background: transparent url('http://www.cheerify.it/images/ornament2.png') no-repeat;
+	height: 188px;
+	width: 65px;
+}
+.amp-ornament3 {
+	background: transparent url('http://www.cheerify.it/images/ornament3.png') no-repeat;
+	height: 188px;
+	width: 63px;
+}
+.amp-ornament4 {
+	background: transparent url('http://www.cheerify.it/images/ornament4.png') no-repeat;
+	height: 188px;
+	width: 63px;
+}
+.amp-ornament5 {
+	background: transparent url('http://www.cheerify.it/images/ornament5.png') no-repeat;
+	height: 188px;
+	width: 63px;
+}
+.amp-ornament6 {
+	background: transparent url('http://www.cheerify.it/images/ornament6.png') no-repeat;
+	height: 254px;
+	width: 98px;
+}
+.amp-ornament7 {
+	background: transparent url('http://www.cheerify.it/images/ornament7.png') no-repeat;
+	height: 295px;
+	width: 117px;
+}
+.amp-ornament8 {
+	background: transparent url('http://www.cheerify.it/images/ornament8.png') no-repeat;
+	height: 258px;
+	width: 101px;
+}
+.amp-ornament9 {
+	background: transparent url('http://www.cheerify.it/images/ornament9.png') no-repeat;
+	height: 295px;
+	width: 116px;
+}
+
+@keyframes amp-ornament-drop{
+	0% {
+		top:-300px;
+		transform: rotate(-20deg);
+	}
+	50% {
+		transform: rotate(10deg);
+		top:0px;
+	}
+	100% {
+		transform: rotate(0deg);
+		top:0px;
+	}
+}
+
+@-moz-keyframes amp-ornament-drop{
+	0% {
+		top:-300px;
+		-moz-transform: rotate(-20deg);
+	}
+	50% {
+		-moz-transform: rotate(10deg);
+		top:0px;
+	}
+	100% {
+		-moz-transform: rotate(0deg);
+		top:0px;
+	}
+}
+
+@-webkit-keyframes amp-ornament-drop {
+	0% {
+		top:-300px;
+		-webkit-transform: rotate(-20deg);
+	}
+	50% {
+		-webkit-transform: rotate(10deg);
+		top:0px;
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		top:0px;
+	}
+}
+
+@-o-keyframes amp-ornament-drop {
+	0% {
+		top:-300px;
+		-o-transform: rotate(-20deg);
+	}
+	50% {
+		-o-transform: rotate(10deg);
+		top:0px;
+	}
+	100% {
+		-o-transform: rotate(0deg);
+		top:0px;
+	}
+}
+
+@-ms-keyframes amp-ornament-drop {
+	0% {
+		top:-300px;
+		-ms-transform: rotate(-20deg);
+	}
+	50% {
+		-ms-transform: rotate(10deg);
+		top:0px;
+	}
+	100% {
+		-ms-transform: rotate(0deg);
+		top:0px;
+	}
+}
+
+/* */
+@keyframes amp-ornament-drop-short{
+	0% {
+		top:-300px;
+		transform: rotate(-20deg);
+	}
+	50% {
+		transform: rotate(10deg);
+		top:-50px;
+	}
+	100% {
+		transform: rotate(0deg);
+		top:-50px;
+	}
+}
+
+@-moz-keyframes amp-ornament-drop-short{
+	0% {
+		top:-300px;
+		-moz-transform: rotate(-20deg);
+	}
+	50% {
+		-moz-transform: rotate(10deg);
+		top:-50px;
+	}
+	100% {
+		-moz-transform: rotate(0deg);
+		top:-50px;
+	}
+}
+
+@-webkit-keyframes amp-ornament-drop-short {
+	0% {
+		top:-300px;
+		-webkit-transform: rotate(-20deg);
+	}
+	50% {
+		-webkit-transform: rotate(10deg);
+		top:-50px;
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		top:-50px;
+	}
+}
+
+@-o-keyframes amp-ornament-drop-short {
+	0% {
+		top:-300px;
+		-o-transform: rotate(-20deg);
+	}
+	50% {
+		-o-transform: rotate(10deg);
+		top:-50px;
+	}
+	100% {
+		-o-transform: rotate(0deg);
+		top:-50px;
+	}
+}
+
+@-ms-keyframes amp-ornament-drop-short {
+	0% {
+		top:-300px;
+		-ms-transform: rotate(-20deg);
+	}
+	50% {
+		-ms-transform: rotate(10deg);
+		top:-50px;
+	}
+	100% {
+		-ms-transform: rotate(0deg);
+		top:-50px;
+	}
+}
+
+
+.amp-ornament-up {
+	position: fixed;
+	z-index:4000000;
+	top:-300px;
+	animation: amp-ornament-up ease-out .5s;
+	animation-iteration-count: 1;
+	animation-fill-mode:forwards;
+	-webkit-animation: amp-ornament-up ease-out .5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation: amp-ornament-up ease-out .5s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode:forwards;
+	-o-animation: amp-ornament-up ease-out .5s;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode:forwards;
+	-ms-animation: amp-ornament-up ease-out .5s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-fill-mode:forwards;
+}
+
+@keyframes amp-ornament-up{
+	0% {
+		top:0px;
+	}
+	100% {
+		top:-300px;
+	}
+}
+
+@-moz-keyframes amp-ornament-up{
+	0% {
+		top:0px;
+	}
+	100% {
+		top:-300px;
+	}
+}
+
+@-webkit-keyframes amp-ornament-up {
+	0% {
+		top:0px;
+	}
+	100% {
+		top:-300px;
+	}
+}
+
+@-o-keyframes amp-ornament-up {
+	0% {
+		top:0px;
+	}
+	100% {
+		top:-300px;
+	}
+}
+
+@-ms-keyframes amp-ornament-up {
+	0% {
+		top:0px;
+	}
+	100% {
+		top:-300px;
+	}
+}
+
+.amp-wrecking-ball-right {
+	position: fixed;
+	top: -10px;
+	right: 0px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/wreackingball.png') no-repeat !important;
+	width: 802px;
+	height: 547px;
+	z-index: 9999;
+	transform: rotate(95deg);
+	-webkit-transform: rotate(95deg);
+	-moz-transform: rotate(95deg);
+	-o-transform: rotate(95deg);
+	animation: wrecking-ball-right ease-in 2s;
+	animation-iteration-count: 1;
+	transform-origin: 100% 0%;
+	animation-fill-mode:forwards;
+	-webkit-animation: wrecking-ball-right ease-in 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 0%;
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation: wrecking-ball-right ease-in 2s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 100% 0%;
+	-moz-animation-fill-mode:forwards;
+	-o-animation: wrecking-ball-right ease-in 2s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 100% 0%;
+	-o-animation-fill-mode:forwards;
+}
+@keyframes wrecking-ball-right{
+  0% {
+    transform: rotate(95deg);
+  }
+  100% {
+    transform: rotate(-95deg);
+  }
+}
+@-webkit-keyframes wrecking-ball-right{
+  0% {
+    -webkit-transform: rotate(95deg);
+  }
+  100% {
+    -webkit-transform: rotate(-95deg);
+  }
+}
+@-moz-keyframes wrecking-ball-right{
+  0% {
+    -moz-transform: rotate(95deg);
+  }
+  100% {
+    -moz-transform: rotate(-95deg);
+  }
+}
+@-o-keyframes wrecking-ball-right{
+  0% {
+    -o-transform: rotate(95deg);
+  }
+  100% {
+    -o-transform: rotate(-95deg);
+  }
+}
+
+.amp-wrecking-ball-left {
+	position: fixed;
+	top: -10px;
+	left: -802px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/wreackingball.png') no-repeat !important;
+	width: 802px;
+	height: 547px;
+	z-index: 9999;
+	transform: rotate(-95deg);
+	-webkit-transform: rotate(-95deg);
+	-moz-transform: rotate(-95deg);
+	-o-transform: rotate(-95deg);
+	animation: wrecking-ball-left ease-in 2s;
+	animation-iteration-count: 1;
+	transform-origin: 0% 0%;
+	animation-fill-mode:forwards;
+	-webkit-animation: wrecking-ball-left ease-in 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 0%;
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation: wrecking-ball-left ease-in 2s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 100% 0%;
+	-moz-animation-fill-mode:forwards;
+	-o-animation: wrecking-ball-left ease-in 2s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 100% 0%;
+	-o-animation-fill-mode:forwards;
+}
+@keyframes wrecking-ball-left{
+  0% {
+    transform: rotate(-95deg) scaleX(-1);
+  }
+  100% {
+    transform: rotate(95deg) scaleX(-1);
+  }
+}
+@-webkit-keyframes wrecking-ball-left{
+  0% {
+    -webkit-transform: rotate(-95deg) scaleX(-1);
+  }
+  100% {
+    -webkit-transform: rotate(95deg) scaleX(-1);
+  }
+}
+@-moz-keyframes wrecking-ball-left{
+  0% {
+    -moz-transform: rotate(-95deg) scaleX(-1);
+  }
+  100% {
+    -moz-transform: rotate(95deg) scaleX(-1);
+  }
+}
+@-o-keyframes wrecking-ball-left{
+  0% {
+    -o-transform: rotate(-95deg) scaleX(-1);
+  }
+  100% {
+    -o-transform: rotate(95deg) scaleX(-1);
+  }
+}
+
+.amp-wrecking-ball-snowman {
+	position: fixed;
+	top: -10px;
+	left:-20%;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/snwoman_wreckingball.png') no-repeat !important;
+	width: 802px;
+	height: 547px;
+	z-index: 9999;
+	transform: rotate(-40deg);
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	animation: wrecking-ball-snowman ease-in 2s;
+	animation-iteration-count: 1;
+	transform-origin: 0% 0%;
+	animation-fill-mode:forwards;
+	-webkit-animation: wrecking-ball-snowman ease-in 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 0%;
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation: wrecking-ball-snowman ease-in 2s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 100% 0%;
+	-moz-animation-fill-mode:forwards;
+	-o-animation: wrecking-ball-snowman ease-in 2s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 100% 0%;
+	-o-animation-fill-mode:forwards;
+}
+@keyframes wrecking-ball-snowman{
+  0% {
+    transform: rotate(-40deg);
+    left:-20%;
+  }
+  100% {
+    transform: rotate(-80deg);
+    left:120%;
+  }
+}
+@-webkit-keyframes wrecking-ball-snowman{
+  0% {
+    -webkit-transform: rotate(-40deg);
+    left:-20%;
+  }
+  100% {
+    -webkit-transform: rotate(-80deg);
+    left:120%;
+  }
+}
+@-moz-keyframes wrecking-ball-snowman{
+  0% {
+    -moz-transform: rotate(-40deg);
+    left:-20%;
+  }
+  100% {
+    -moz-transform: rotate(-80deg);
+    left:120%;
+  }
+}
+@-o-keyframes wrecking-ball-snowman{
+  0% {
+    -o-transform: rotate(-40deg);
+    left:-20%;
+  }
+  100% {
+    -o-transform: rotate(-80deg);
+    left:120%;
+  }
+}
+
+.amp-border {
+	margin: -40px;
+    border:40px solid #fff;
+	-webkit-border-image:url('http://www.cheerify.it/images/lights_a.png') 40 40 40 40 round !important;
+	-moz-border-image:url('http://www.cheerify.it/images/lights_a.png') 40 40 40 40 round !important;
+	-o-border-image:url('http://www.cheerify.it/images/lights_a.png') 40 40 40 40 round !important;
+	border-image:url('http://www.cheerify.it/images/lights_a.png') 40 40 40 40 round !important;
+}
+.amp-border-alt {
+	margin: -40px;
+    border:40px solid #fff;
+	-webkit-border-image:url('http://www.cheerify.it/images/lights_b.png') 40 40 40 40 round !important;
+	-moz-border-image:url('http://www.cheerify.it/images/lights_b.png') 40 40 40 40 round !important;
+	-o-border-image:url('http://www.cheerify.it/images/lights_b.png') 40 40 40 40 round !important;
+	border-image:url('http://www.cheerify.it/images/lights_b.png') 40 40 40 40 round !important;
+}
+
+.amp-skew {
+	-webkit-perspective: 800px !important;
+	-webkit-perspective-origin-x: 50% !important;
+	-webkit-perspective-origin-y: 100% !important;
+}
+.amp-skew > div:not(#amp-player) {
+	transition: all 0.5s ease !important;
+	-webkit-transform: translateY(-39%) rotateX(14deg) !important;
+}
+
+.amp-skier {
+	position: absolute;
+    left: 45%;
+    top: -10%;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/skier.png') no-repeat;
+    height: 68px;
+    width: 40px;
+
+	-webkit-animation: amp-skier ease-in 5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 0%;
+
+	-moz-animation: amp-skier ease-in 5s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 100% 0%;
+
+	-o-animation: amp-skier ease-in 5s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 100% 0%;
+
+	animation: amp-skier ease-in 5s;
+	animation-iteration-count: 1;
+	transform-origin: 100% 0%;
+
+}
+@-webkit-keyframes amp-skier{
+  0% {
+    top: -10%;
+  }
+  11%,31%,51%,71%,91% {
+  	-webkit-transform: scaleX(-1);
+  }
+  10%,30%,50%,70%,90% {
+  	-webkit-transform: scaleX(1);
+  	left: 55%;
+  }
+  21%,41%,61%,81% {
+  	-webkit-transform: scaleX(1);
+  }
+  20%,40%,60%,80% {
+  	-webkit-transform: scaleX(-1);
+  	left: 45%;
+  }
+  99% {
+  	-webkit-transform: scaleX(-1);
+  }
+  100% {
+    top: 80%;
+  }
+}
+@-moz-keyframes amp-skier{
+  0% {
+    top: -10%;
+  }
+  11%,31%,51%,71%,91% {
+  	-moz-transform: scaleX(-1);
+  }
+  10%,30%,50%,70%,90% {
+  	-moz-transform: scaleX(1);
+  	left: 55%;
+  }
+  21%,41%,61%,81% {
+  	-moz-transform: scaleX(1);
+  }
+  20%,40%,60%,80% {
+  	-moz-transform: scaleX(-1);
+  	left: 45%;
+  }
+  99% {
+  	-moz-transform: scaleX(-1);
+  }
+  100% {
+    top: 80%;
+  }
+}
+@-o-keyframes amp-skier{
+  0% {
+    top: -10%;
+  }
+  11%,31%,51%,71%,91% {
+  	-o-transform: scaleX(-1);
+  }
+  10%,30%,50%,70%,90% {
+  	-o-transform: scaleX(1);
+  	left: 55%;
+  }
+  21%,41%,61%,81% {
+  	-o-transform: scaleX(1);
+  }
+  20%,40%,60%,80% {
+  	-o-transform: scaleX(-1);
+  	left: 45%;
+  }
+  99% {
+  	-o-transform: scaleX(-1);
+  }
+  100% {
+    top: 80%;
+  }
+}
+@keyframes amp-skier{
+  0% {
+    top: -10%;
+  }
+  11%,31%,51%,71%,91% {
+  	transform: scaleX(-1);
+  }
+  10%,30%,50%,70%,90% {
+  	transform: scaleX(1);
+  	left: 55%;
+  }
+  21%,41%,61%,81% {
+  	transform: scaleX(1);
+  }
+  20%,40%,60%,80% {
+  	transform: scaleX(-1);
+  	left: 45%;
+  }
+  99% {
+  	transform: scaleX(-1);
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+.amp-monster {
+	position: absolute;
+    left: -10%;
+    top: 0px;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/monster.png') no-repeat;
+    height: 105px;
+    width: 76px;
+
+    -webkit-animation: amp-monster ease-in 3s;
+    -webkit-animation-delay: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 100% 0%;
+	-webkit-animation-fill-mode:forwards;
+
+	-moz-animation: amp-monster ease-in 3s;
+    -moz-animation-delay: 2s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 100% 0%;
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: amp-monster ease-in 3s;
+    -o-animation-delay: 2s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 100% 0%;
+	-o-animation-fill-mode:forwards;
+
+	animation: amp-monster ease-in 3s;
+    animation-delay: 2s;
+	animation-iteration-count: 1;
+	transform-origin: 100% 0%;
+	animation-fill-mode:forwards;
+}
+@-webkit-keyframes amp-monster{
+  0% {
+    left: -10%;
+    top: 0px;
+  }
+  100% {
+  	left: 45%;
+    top: 80%;
+  }
+}
+@-moz-keyframes amp-monster{
+  0% {
+    left: -10%;
+    top: 0px;
+  }
+  100% {
+  	left: 45%;
+    top: 80%;
+  }
+}
+@-o-keyframes amp-monster{
+  0% {
+    left: -10%;
+    top: 0px;
+  }
+  100% {
+  	left: 45%;
+    top: 80%;
+  }
+}
+@keyframes amp-monster{
+  0% {
+    left: -10%;
+    top: 0px;
+  }
+  100% {
+  	left: 45%;
+    top: 80%;
+  }
+}
+
+.amp-mountain-body > *:not(#amp-player):not(.amp-mountain):not(.amp-skier):not(.amp-monster) {
+    -webkit-animation: fade-out ease-in 1s;
+	-webkit-animation-fill-mode:forwards;
+
+	-moz-animation: fade-out ease-in 1s;
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: fade-out ease-in 1s;
+	-o-animation-fill-mode:forwards;
+
+	animation: fade-out ease-in 1s;
+	animation-fill-mode:forwards;
+}
+.amp-mountain-body > div.amp-mountain {
+	-webkit-animation: fade-in ease-in 1s;
+	-webkit-animation-fill-mode:forwards;
+
+	-moz-animation: fade-in ease-in 1s;
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: fade-in ease-in 1s;
+	-o-animation-fill-mode:forwards;
+
+	animation: fade-in ease-in 1s;
+	animation-fill-mode:forwards;
+	margin: 0 auto;
+	display: block;
+	width: 986px;
+	height: 1123px;
+	background: rgba(0, 0, 0, 0) url('http://www.cheerify.it/images/mountain.png') !important;
+}
+@-webkit-keyframes fade-out{
+  0% {
+    opacity:1;
+  }
+  100% {
+  	opacity:0;
+  }
+}
+@-moz-keyframes fade-out{
+  0% {
+    opacity:1;
+  }
+  100% {
+  	opacity:0;
+  }
+}
+@-o-keyframes fade-out{
+  0% {
+    opacity:1;
+  }
+  100% {
+  	opacity:0;
+  }
+}
+@keyframes fade-out{
+  0% {
+    opacity:1;
+  }
+  100% {
+  	opacity:0;
+  }
+}
+
+@-webkit-keyframes fade-in{
+  0% {
+    opacity:0;
+  }
+  100% {
+  	opacity:1;
+  }
+}
+@-moz-keyframes fade-in{
+  0% {
+    opacity:0;
+  }
+  100% {
+  	opacity:1;
+  }
+}
+@-o-keyframes fade-in{
+  0% {
+    opacity:0;
+  }
+  100% {
+  	opacity:1;
+  }
+}
+@keyframes fade-in{
+  0% {
+    opacity:0;
+  }
+  100% {
+  	opacity:1;
+  }
+}
+
+.amp-finish {
+	-webkit-animation: fade-in ease-in 1s;
+	-webkit-animation-fill-mode:forwards;
+
+	-moz-animation: fade-in ease-in 1s;
+	-moz-animation-fill-mode:forwards;
+
+	-o-animation: fade-in ease-in 1s;
+	-o-animation-fill-mode:forwards;
+
+	animation: fade-in ease-in 1s;
+	animation-fill-mode:forwards;
+	
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	z-index: 99999999;
+}
+.amp-finish img{
+	display: block;
+	margin: 100px auto;
+	text-align: center;
+}
+
+
+.amp-night {
+		background: #fff url('http://www.cheerify.it/images/night_snow.jpg') no-repeat !important;
+		background-size: contain !important;
+}
+
+
+.amp-blackout {
+	background: #000 !important;
+}
+
+.amp-blackout-all *{
+	display: none !important;
+}
+.amp-blackout-all {
+	background: #000 !important;
+}
+
+.amp-3d {
+	font-family: Garamond, serif;
+	line-height: 1em;
+	color: #fff9d6;
+	font-weight:bold;
+	text-shadow:0px 0px 0 rgb(231,231,231),1px 1px 0 rgb(216,216,216),2px 2px 0 rgb(202,202,202),3px 3px 0 rgb(187,187,187),4px 4px 0 rgb(173,173,173),5px 5px 0 rgb(158,158,158), 6px 6px 0 rgb(144,144,144),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);}
+}
+
+/* Color - Blue */
+.amp-blue-color {
+	background: blue !important;
+	color: blue !important;
+	border-radius: 5px !important;
+}
+/* Color - Red */
+.amp-red-color {
+	background: red !important;
+	color: red !important;
+	border-radius: 5px !important;
+}
+/* Color - Yellow */
+.amp-yellow-color {
+	background: yellow !important;
+	color: yellow !important;
+	border-radius: 5px !important;
+}
+/* Color - Green */
+.amp-green-color {
+	background: green !important;
+	color: green !important;
+	border-radius: 5px !important;
+}
+
+/* Color - Orange */
+.amp-orange-color {
+	background: orange !important;
+	color: orange !important;
+	border-radius: 5px !important;
+}
+
+/* Color - Purple */
+.amp-purple-color {
+	background: purple !important;
+	color: purple !important;
+	border-radius: 5px !important;
+}
+
+
+/* Color - Black */
+.amp-black-color {
+	background: black !important;
+	color: black !important;
+	border-radius: 5px !important;
+}
+
+/* Shake */
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+.amp-shake {
+	-webkit-animation-name: shake;
+	-moz-animation-name: shake;
+	-o-animation-name: shake;
+	animation-name: shake;
+		-webkit-animation-duration: .4s;
+		 -moz-animation-duration: .4s;
+			 -o-animation-duration: .4s;
+					animation-duration: .4s;
+	-webkit-animation-fill-mode: both;
+		 -moz-animation-fill-mode: both;
+			 -o-animation-fill-mode: both;
+					animation-fill-mode: both;
+}
+/* Wobble */
+@-webkit-keyframes wobble {
+	0% { -webkit-transform: translateX(0%); }
+	15% { -webkit-transform: translateX(-15%) rotate(-4deg); }
+	30% { -webkit-transform: translateX(12%) rotate(3deg); }
+	45% { -webkit-transform: translateX(-9%) rotate(-2deg); }
+	60% { -webkit-transform: translateX(6%) rotate(2deg); }
+	75% { -webkit-transform: translateX(-3%) rotate(-1deg); }
+	100% { -webkit-transform: translateX(0%); }
+}
+
+@-moz-keyframes wobble {
+	0% { -moz-transform: translateX(0%); }
+	15% { -moz-transform: translateX(-15%) rotate(-5deg); }
+	30% { -moz-transform: translateX(12%) rotate(3deg); }
+	45% { -moz-transform: translateX(-9%) rotate(-3deg); }
+	60% { -moz-transform: translateX(6%) rotate(2deg); }
+	75% { -moz-transform: translateX(-3%) rotate(-1deg); }
+	100% { -moz-transform: translateX(0%); }
+}
+
+@-o-keyframes wobble {
+	0% { -o-transform: translateX(0%); }
+	15% { -o-transform: translateX(-15%) rotate(-5deg); }
+	30% { -o-transform: translateX(12%) rotate(3deg); }
+	45% { -o-transform: translateX(-9%) rotate(-3deg); }
+	60% { -o-transform: translateX(6%) rotate(2deg); }
+	75% { -o-transform: translateX(-3%) rotate(-1deg); }
+	100% { -o-transform: translateX(0%); }
+}
+
+@keyframes wobble {
+	0% { transform: translateX(0%); }`
+	15% { transform: translateX(-15%) rotate(-5deg); }
+	30% { transform: translateX(12%) rotate(3deg); }
+	45% { transform: translateX(-9%) rotate(-3deg); }
+	60% { transform: translateX(6%) rotate(2deg); }
+	75% { transform: translateX(-3%) rotate(-1deg); }
+	100% { transform: translateX(0%); }
+}
+.amp-wobble {
+	-webkit-animation-name: wobble;
+	-moz-animation-name: wobble;
+	-o-animation-name: wobble;
+	animation-name: wobble;
+}
+
+/* Pulse */
+@-webkit-keyframes pulse {
+		0% { -webkit-transform: scale(1); } 
+	50% { -webkit-transform: scale(1.1); }
+		100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes pulse {
+		0% { -moz-transform: scale(1); }  
+	50% { -moz-transform: scale(1.1); }
+		100% { -moz-transform: scale(1); }
+}
+@-o-keyframes pulse {
+		0% { -o-transform: scale(1); }  
+	50% { -o-transform: scale(1.1); }
+		100% { -o-transform: scale(1); }
+}
+@keyframes pulse {
+		0% { transform: scale(1); } 
+	50% { transform: scale(1.1); }
+		100% { transform: scale(1); }
+}
+.amp-pulse {
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	-o-animation-name: pulse;
+	animation-name: pulse;
+}
+
+/* BounceIn */
+@-webkit-keyframes bounceIn {
+	0% {opacity: 0;-webkit-transform: scale(.3);}
+	50% {opacity: 1;-webkit-transform: scale(1.05);}
+	70% {-webkit-transform: scale(.9);}
+	100% {-webkit-transform: scale(1);}
+}
+
+@-moz-keyframes bounceIn {
+	0% {opacity: 0;-moz-transform: scale(.3);}
+	50% {opacity: 1;-moz-transform: scale(1.05);}
+	70% {-moz-transform: scale(.9);}
+	100% {-moz-transform: scale(1);}
+}
+
+@-o-keyframes bounceIn {
+	0% {opacity: 0;-o-transform: scale(.3);}
+	50% {opacity: 1;-o-transform: scale(1.05);}
+	70% {-o-transform: scale(.9);}
+	100% {-o-transform: scale(1);}
+}
+
+@keyframes bounceIn {
+	0% {opacity: 0;transform: scale(.3);}
+	50% {opacity: 1;transform: scale(1.05);}
+	70% {transform: scale(.9);}
+	100% {transform: scale(1);}
+}
+.amp-bounceIn {
+	-webkit-animation-name: bounceIn;
+	-moz-animation-name: bounceIn;
+	-o-animation-name: bounceIn;
+	animation-name: bounceIn;
+}
+
+/* Swing-Ring */
+.amp-swing {
+-webkit-animation-name: swing;
+	 -moz-animation-name: swing;
+		 -o-animation-name: swing;
+				animation-name: swing;
+-webkit-transform-origin: 50% 0%;
+	 -moz-transform-origin: 50% 0%;
+		 -o-transform-origin: 50% 0%;
+				transform-origin: 50% 0%;
+-webkit-animation-fill-mode: forwards;
+	 -moz-animation-fill-mode: forwards;
+		 -o-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+-webkit-animation: swing linear 1s; 
+	 -moz-animation: swing linear 1s; 
+		 -o-animation: swing linear 1s;
+				animation: swing linear 1s;
+-webkit-animation-iteration-count: 1;
+		-moz-animation-iteration-count: 1;
+		-o-animation-iteration-count: 1;
+			 animation-iteration-count: 1;
+}
+
+@keyframes swing {
+	0% {transform: rotate(0deg);} 
+	10% {transform: rotate(-26deg) ;}
+	20% {transform: rotate(21deg) ;}
+	30% {transform: rotate(-16deg) ;}
+	40% {transform: rotate(16deg) ;}
+	50% {transform: rotate(-16deg) ;}
+	60% {transform: rotate(16deg) ;}
+	70% {transform: rotate(-12deg) ;}
+	80% {transform: rotate(7deg) ;}
+	90% {transform: rotate(-3deg) ;}
+	100% {transform: rotate(0deg) ;}
+}
+
+@-moz-keyframes swing {
+	0% {-moz-transform:  rotate(0deg) ;}
+	10% {-moz-transform:  rotate(-26deg) ;}
+	20% {-moz-transform:  rotate(21deg) ;}
+	30% {-moz-transform:  rotate(-16deg) ;}
+	40% {-moz-transform:  rotate(16deg) ;}
+	50% {-moz-transform:  rotate(-16deg) ;}
+	60% {-moz-transform:  rotate(16deg) ;}
+	70% {-moz-transform:  rotate(-12deg) ;}
+	80% {-moz-transform:  rotate(7deg) ;}
+	90% {-moz-transform:  rotate(-3deg) ;}
+	100% {-moz-transform:  rotate(0deg) ;}
+}
+
+@-webkit-keyframes swing {
+	0% {-webkit-transform:  rotate(0deg) ;}
+	10% {-webkit-transform:  rotate(-26deg) ;}
+	20% {-webkit-transform:  rotate(21deg) ;}
+	30% {-webkit-transform:  rotate(-16deg) ;}
+	40% {-webkit-transform:  rotate(16deg) ;}
+	50% {-webkit-transform:  rotate(-16deg) ;}
+	60% {-webkit-transform:  rotate(16deg) ;}
+	70% {-webkit-transform:  rotate(-12deg) ;}
+	80% {-webkit-transform:  rotate(7deg) ;}
+	90% {-webkit-transform:  rotate(-3deg) ;}
+	100% {-webkit-transform:  rotate(0deg) ;}
+}
+
+@-o-keyframes swing {
+	0% {-o-transform:  rotate(0deg) ;}
+	10% {-o-transform:  rotate(-26deg) ;}
+	20% {-o-transform:  rotate(21deg) ;}
+	30% {-o-transform:  rotate(-16deg) ;}
+	40% {-o-transform:  rotate(16deg) ;}
+	50% {-o-transform:  rotate(-16deg) ;}
+	60% {-o-transform:  rotate(16deg) ;}
+	70% {-o-transform:  rotate(-12deg) ;}
+	80% {-o-transform:  rotate(7deg) ;}
+	90% {-o-transform:  rotate(-3deg) ;}
+	100% {-o-transform:  rotate(0deg) ;}
+}
+
+/*@-ms-keyframes swing {
+	0% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {-ms-transform:  rotate(-26deg) ;}
+	20% {-ms-transform:  rotate(21deg) ;}
+	30% {-ms-transform:  rotate(-16deg) ;}
+	40% {-ms-transform:  rotate(16deg) ;}
+	50% {-ms-transform:  rotate(-16deg) ;}
+	60% {-ms-transform:  rotate(16deg) ;}
+	70% {-ms-transform:  rotate(-12deg) ;}
+	80% {-ms-transform:  rotate(7deg) ;}
+	90% {-ms-transform:  rotate(-3deg) ;}
+	100% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}*/
+
+/*Tada*/
+.amp-tada {
+	-webkit-animation-name: tada;
+		 -moz-animation-name: tada;
+			 -o-animation-name: tada;
+					animation-name: tada;
+	-webkit-animation: tada linear 1s;
+		 -moz-animation: tada linear 1s;
+			 -o-animation: tada linear 1s;
+					animation: tada linear 1s;
+	-webkit-animation-iteration-count: 1;
+		 -moz-animation-iteration-count: 1; 
+			 -o-animation-iteration-count: 1;
+					animation-iteration-count: 1;
+}
+
+@keyframes tada {
+	0% {left:0px;top:0px;opacity:1;transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	20% {transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	30% {transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	40% {transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	50% {transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	60% {transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	70% {transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	80% {transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	90% {transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	100% {left:0px;top:0px;opacity:1;transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-moz-keyframes tada {
+	0% {left:0px;top:0px;opacity:1;-moz-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {-moz-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	20% {-moz-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	30% {-moz-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	40% {-moz-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	50% {-moz-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	60% {-moz-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	70% {-moz-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	80% {-moz-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	90% {-moz-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	100% {left:0px;top:0px;opacity:1;-moz-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-webkit-keyframes tada {
+	0% {left:0px;top:0px;opacity:1;-webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {-webkit-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	20% {-webkit-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	30% {-webkit-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	40% {-webkit-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	50% {-webkit-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	60% {-webkit-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	70% {-webkit-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	80% {-webkit-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	90% {-webkit-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	100% {left:0px;top:0px;opacity:1;-webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-o-keyframes tada {
+	0% {left:0px;top:0px;opacity:1;-o-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {-o-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	20% {-o-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	30% {-o-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	40% {-o-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	50% {-o-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	60% {-o-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	70% {-o-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	80% {-o-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	90% {-o-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	100% {left:0px;top:0px;opacity:1;-o-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+/*@-ms-keyframes tada {
+	0% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	10% {-ms-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	20% {-ms-transform:  rotate(-3deg) scaleX(0.8) scaleY(0.8) ;}
+	30% {-ms-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	40% {-ms-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	50% {-ms-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	60% {-ms-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	70% {-ms-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	80% {-ms-transform:  rotate(-3deg) scaleX(1.2) scaleY(1.2) ;}
+	90% {-ms-transform:  rotate(3deg) scaleX(1.2) scaleY(1.2) ;}
+	100% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}*/
+
+.amp-bounce {
+	-webkit-animation-name: bounce;
+		 -moz-animation-name: bounce;
+			 -o-animation-name: bounce;
+					animation-name: bounce;
+	-webkit-animation: bounce linear 0.8s;
+		 -moz-animation: bounce linear 0.8s;
+			 -o-animation: bounce linear 0.8s; 
+					animation: bounce linear 0.8s;
+	-webkit-animation-iteration-count: 1;
+		 -moz-animation-iteration-count: 1;
+			 -o-animation-iteration-count: 1;  
+					animation-iteration-count: 1;
+	-webkit-transform-origin: ;
+		 -moz-transform-origin: ;
+			 -o-transform-origin: ; 
+					transform-origin: ;
+ }
+
+@keyframes bounce{
+	0% {left:0px;top:0px;opacity:1;transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	15% {top:-25px;left:0px;}
+	30% {top:0px; left:0px;}
+	45% {top:-15px; left:0px;}
+	60% {top:0px; left:0px;}
+	75% {top:-5px; left:0px;}
+	100% {left:0px;top:0px;opacity:1;transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-moz-keyframes bounce{
+	0% { left:0px;top:0px;opacity:1;-moz-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	15% {top:-25px; left:0px;}
+	30% {top:0px; left:0px;}
+	45% {top:-15px; left:0px;}
+	60% {top:0px; left:0px;}
+	75% {top:-5px; left:0px;}
+	100% {left:0px;top:0px;opacity:1;-moz-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-webkit-keyframes bounce {
+	0% {left:0px;top:0px;opacity:1;-webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	15% {top:-25px; left:0px;}
+	30% {top:0px; left:0px;}
+	45% {top:-15px; left:0px;}
+	60% {top:0px; left:0px;}
+	75% {top:-5px; left:0px;}
+	100% {left:0px;top:0px;opacity:1;-webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-o-keyframes bounce {
+	0% {left:0px;top:0px;opacity:1;-o-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	15% {top:-25px; left:0px;}
+	30% {top:0px; left:0px;}
+	45% {top:-15px; left:0px;}
+	60% {top:0px; left:0px;}
+	75% {top:-5px; left:0px;}
+	100% {left:0px;top:0px;opacity:1;-o-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+@-ms-keyframes bounce {
+	0% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+	15% {top:-25px; left:0px;}
+	30% {top:0px; left:0px;}
+	45% {top:-15px; left:0px;}
+	60% {top:0px; left:0px;}
+	75% {top:-5px; left:0px;}
+	100% {left:0px;top:0px;opacity:1;-ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;}
+}
+
+/* Flash */
+.amp-flash {
+	-webkit-animation-name: flash;
+		 -moz-animation-name: flash;
+			 -o-animation-name: flash;
+					animation-name: flash;
+	-webkit-animation-iteration-count: 3;
+		 -moz-animation-iteration-count: 3; 
+			 -o-animation-iteration-count: 3;
+					animation-iteration-count: 3;
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+		 -moz-animation-duration:1s;
+			 -o-animation-duration:1s;
+					animation-duration:1s;
+}
+
+@-webkit-keyframes flash {
+	0%, 50%, 100% {opacity: 1;} 
+	25%, 75% {opacity: 0;}
+}
+
+@-moz-keyframes flash {
+	0%, 50%, 100% {opacity: 1;} 
+	25%, 75% {opacity: 0;}
+}
+
+@-o-keyframes flash {
+	0%, 50%, 100% {opacity: 1;} 
+	25%, 75% {opacity: 0;}
+}
+
+@keyframes flash {
+	0%, 50%, 100% {opacity: 1;} 
+	25%, 75% {opacity: 0;}
+}
+
+/* Flip */
+.amp-flip {
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+		 -moz-animation-duration:1s;
+			 -o-animation-duration:1s;
+					animation-duration:1s;
+	-webkit-backface-visibility: visible !important;
+		 -moz-backface-visibility: visible !important;
+			 -o-backface-visibility: visible !important;
+					backface-visibility: visible !important;
+	-webkit-animation-name: flip;
+		-moz-animation-name: flip;
+			-o-animation-name: flip;
+				 animation-name: flip;
+}
+	
+	@-webkit-keyframes flip {
+	0% {-webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);-webkit-animation-timing-function: ease-out;} 
+	40% {-webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);-webkit-animation-timing-function: ease-out;}
+	50% {-webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);-webkit-animation-timing-function: ease-in;}
+	80% {-webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);-webkit-animation-timing-function: ease-in;}
+	100% {-webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);-webkit-animation-timing-function: ease-in;}
+}
+
+@-moz-keyframes flip {
+	0% {-moz-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);-moz-animation-timing-function: ease-out;}
+	40% {-moz-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);-moz-animation-timing-function: ease-out;}
+	50% {-moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);-moz-animation-timing-function: ease-in;}
+	80% {-moz-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);-moz-animation-timing-function: ease-in;}
+	100% {-moz-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);-moz-animation-timing-function: ease-in;}
+}
+
+@-o-keyframes flip {
+	0% {-o-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);-o-animation-timing-function: ease-out;}
+	40% {-o-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);-o-animation-timing-function: ease-out;}
+	50% {-o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);-o-animation-timing-function: ease-in;}
+	80% {-o-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);-o-animation-timing-function: ease-in;}
+	100% {-o-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);-o-animation-timing-function: ease-in;}
+}
+
+@keyframes flip {
+	0% {transform: perspective(400px) translateZ(0) rotateY(0) scale(1);animation-timing-function: ease-out;}
+	40% {transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);animation-timing-function: ease-out;}
+	50% {transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);animation-timing-function: ease-in;}
+	80% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);animation-timing-function: ease-in;}
+	100% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);animation-timing-function: ease-in;}
+}
+
+/* Spin */
+.amp-rotateIn {
+	-webkit-animation-duration:1s;
+					animation-duration:1s;
+	-webkit-animation-name: rotateIn;
+					animation-name: rotateIn;
+}
+
+ @-webkit-keyframes rotateIn {
+	0% {
+		-webkit-transform-origin: center center;
+		-webkit-transform: rotate(-200deg);
+	} 
+	100% {
+		-webkit-transform-origin: center center;
+		-webkit-transform: rotate(0);
+	}
+}
+
+@keyframes rotateIn {
+	0% {
+		transform-origin: center center;
+		transform: rotate(-200deg);
+	}
+	100% {
+		transform-origin: center center;
+		transform: rotate(0);
+	}
+}
+
+/* Color Animate - Was working, now isn't*/
+.amp-color-animate {
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:2s;
+		 -moz-animation-duration:2s;
+			 -o-animation-duration:2s;
+					animation-duration:2s;
+	-webkit-animation-name: rainbow;
+		 -moz-animation-name: rainbow;
+			 -o-animation-name: rainbow;
+					animation-name: rainbow;
+}
+
+@keyframes rainbow{
+	0%   {background-color:red;}
+	20% {background-color:orange;}
+	40%  {background-color:yellow;}
+	60%  {background-color:green;}
+	80% {background-color:blue;}
+	100% {background-color:purple;}
+}
+
+@-webkit-keyframes rainbow {
+	0%   {background-color:red;}
+	20% {background-color:orange;}
+	40%  {background-color:yellow;}
+	60%  {background-color:green;}
+	80% {background-color:blue;}
+	100% {background-color:purple;}
+}
+
+/* Christmas Color Animate - Was working, now isn't* */
+.amp-color-animate-rg {
+		 -webkit-animation: christmas-colors 2s infinite alternate linear;
+		 -moz-animation: christmas-colors 2s infinite alternate linear;
+		 animation: christmas-colors 2s infinite alternate linear;
+}
+
+@-webkit-keyframes christmas-colors {
+		0%   { color: red; } 
+		20%  { color: green; }
+		40%  { color: red; }
+		60%  { color: green; }
+		80%  { color: red; }
+		100% { color: green; }
+}
+
+@-moz-keyframes christmas-background-colors {
+		0%   { color: red; } 
+		20%  { color: green; }
+		40%  { color: red; }
+		60%  { color: green; }
+		80%  { color: red; }
+		100% { color: green; }
+}
+
+/* Glow */
+.amp-glow-red {
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%, rgba(254,252,234,0) 100%) !important;
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(241,218,54,1)), color-stop(100%,rgba(254,252,234,0))) !important;
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -o-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: radial-gradient(ellipse at center,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#00fefcea',GradientType=1 ) !important;
+	
+	-webkit-animation-name: flash;
+		 -moz-animation-name: flash;
+			 -o-animation-name: flash;
+					animation-name: flash;
+	-webkit-animation-iteration-count: 3;
+		 -moz-animation-iteration-count: 3; 
+			 -o-animation-iteration-count: 3;
+					animation-iteration-count: 3;
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+		 -moz-animation-duration:1s;
+			 -o-animation-duration:1s;
+					animation-duration:1s;
+	}
+.amp-glow-green {
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%, rgba(254,252,234,0) 100%) !important;
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(241,218,54,1)), color-stop(100%,rgba(254,252,234,0))) !important;
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -o-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: radial-gradient(ellipse at center,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#00fefcea',GradientType=1 ) !important;
+	
+	-webkit-animation-name: flash;
+		 -moz-animation-name: flash;
+			 -o-animation-name: flash;
+					animation-name: flash;
+	-webkit-animation-iteration-count: 3;
+		 -moz-animation-iteration-count: 3; 
+			 -o-animation-iteration-count: 3;
+					animation-iteration-count: 3;
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+		 -moz-animation-duration:1s;
+			 -o-animation-duration:1s;
+					animation-duration:1s;}
+.amp-glow-yellow {
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%, rgba(254,252,234,0) 100%) !important;
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(241,218,54,1)), color-stop(100%,rgba(254,252,234,0))) !important;
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -o-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	background: radial-gradient(ellipse at center,  rgba(241,218,54,1) 0%,rgba(254,252,234,0) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#00fefcea',GradientType=1 ) !important;
+
+		-webkit-animation-name: flash;
+		 -moz-animation-name: flash;
+			 -o-animation-name: flash;
+					animation-name: flash;
+	-webkit-animation-iteration-count: 1;
+		 -moz-animation-iteration-count: 1; 
+			 -o-animation-iteration-count: 1;
+					animation-iteration-count: 1;
+	-webkit-animation-fill-mode:both;
+		 -moz-animation-fill-mode:both;
+			 -o-animation-fill-mode:both;
+					animation-fill-mode:both;
+	-webkit-animation-duration:1s;
+		 -moz-animation-duration:1s;
+			 -o-animation-duration:1s;
+					animation-duration:1s;
+
+	}

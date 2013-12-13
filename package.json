@@ -1,0 +1,26 @@
+{
+  "name": "cheerify.it",
+  "version": "0.1.0",
+  "description": "Transform your browsing experience into a winter wonderland with the click of a button.",
+  "author": "AMP Agency",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ampagency/cheerify.it.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.1",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-webp": "~0.0.1",
+    "grunt-responsive-images": "~0.0.3",
+    "matchdep": "~0.1.1",
+    "time-grunt": "~0.1.1",
+    "grunt-autoprefixer": "~0.4.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
